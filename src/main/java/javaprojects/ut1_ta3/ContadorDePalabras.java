@@ -27,16 +27,21 @@ public class ContadorDePalabras {
     
     public static int[] contadorVocalesConsonantes(String word){ 
         Vocals vocals;
+        word = word.trim();
         int vocalCount = 0;
         int consonantCount = 0;
+        int spaceCount = 0;
         for(char letter: word.toUpperCase().toCharArray()){
+            if (!(Character.isLetterOrDigit(letter))){
+                spaceCount += 1;
+            }
             for(Vocals vocal : Vocals.values()){
                 if(vocal.name().charAt(0) == letter){
                     vocalCount += 1;
                 }   
             } 
         }
-        consonantCount = word.length() - vocalCount;
+        consonantCount = word.length() - vocalCount - spaceCount;
         int[] totalCounter = {vocalCount, consonantCount};
         return totalCounter;
     } 
