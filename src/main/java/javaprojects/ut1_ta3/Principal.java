@@ -15,6 +15,8 @@ public class Principal {
         System.out.println();
         System.out.println(ContadorDePalabras.contadorVocalesConsonantes(texto).toCharArray());
         System.out.println();
+        System.out.println(ContadorDePalabras.largoPalabras(texto, 6));
+        System.out.println();
         System.out.println(Arrays.toString(ContadorDePalabras.obtenerLineas("C:\\Users\\gonza\\OneDrive\\Escritorio\\Algoritmos y Estructuras de datos\\UT1_TA3\\src\\main\\java\\javaprojects\\ut1_ta3\\UT1_TA3_ARCHIVO_EJEMPLO.txt")));
         System.out.println();
         System.out.println(ContadorDePalabras.cantPalabras(ContadorDePalabras.obtenerLineas("C:\\Users\\gonza\\OneDrive\\Escritorio\\Algoritmos y Estructuras de datos\\UT1_TA3\\src\\main\\java\\javaprojects\\ut1_ta3\\UT1_TA3_ARCHIVO_EJEMPLO.txt")));
