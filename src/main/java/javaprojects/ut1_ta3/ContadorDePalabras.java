@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package javaprojects.ut1_ta3;
 
-/**
- *
- * @author zhynk
- */
+import javax.swing.plaf.synth.SynthRadioButtonMenuItemUI;
+import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ContadorDePalabras {
     public static int contarPalabra(String palabra){
         int contadorPalabra = 0;
@@ -18,14 +19,14 @@ public class ContadorDePalabras {
                 contadorPalabra += 1;
             }
         }
-        if (palabra!=""){
+        if (!palabra.equals("")){
             return contadorPalabra += 1;
         } else {
             return 0;
         }
     }
     
-    public static int[] contadorVocalesConsonantes(String word){ 
+    public static String contadorVocalesConsonantes(String word){
         Vocals vocals;
         word = word.trim();
         int vocalCount = 0;
@@ -42,7 +43,23 @@ public class ContadorDePalabras {
             } 
         }
         consonantCount = word.length() - vocalCount - spaceCount;
-        int[] totalCounter = {vocalCount, consonantCount};
-        return totalCounter;
-    } 
+        return "Cnatidad de Vocales: " + vocalCount + "\n" + "Cantidad de Consonantes: " + consonantCount;
+    }
+
+
+    public static String[] obtenerLineas(String archivo) throws IOException {
+        List<String> lineas = new ArrayList<>();
+        BufferedReader lector = new BufferedReader(new FileReader(archivo));
+        String lineaActual;
+        while ((lineaActual = lector.readLine()) != null) {
+            lineas.add(lineaActual);
+        }
+        lector.close();
+        return lineas.toArray(new String[0]);
+    }
+
+    public static int cantPalabras(String[] lineasArchivo) {
+        return contarPalabra(Arrays.toString(lineasArchivo));
+    }
+
 }
