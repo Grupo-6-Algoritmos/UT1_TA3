@@ -3,6 +3,8 @@
  */
 package javaprojects.ut1_ta3;
 
+import java.util.Arrays;
+
 /**
  *
  * @author zhynk
@@ -59,9 +61,10 @@ public class Principal {
                 + "Y si usted escucha muy duramente \n"
                 + "El aire vendrá a usted por fin. Cuándo todo es uno \n"
                 + "y todo es una piedra y no arrollar. ";
+        
+        String texto2 = "Hola buenas";
 
-        System.out.println(ContadorDePalabras.contarPalabra("  "));
-
-        //System.out.println(texto.split(" ").length);
+        System.out.println(ContadorDePalabras.contarPalabra(texto2));
+        System.out.println(Arrays.toString(ContadorDePalabras.contadorVocalesConsonantes(texto2)));
     }
 }

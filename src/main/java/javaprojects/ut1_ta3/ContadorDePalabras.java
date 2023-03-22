@@ -15,8 +15,6 @@ public class ContadorDePalabras {
         for (int i = 0; i < palabra.length() - 1; i++){
             if ((Character.isDigit(palabra.toCharArray()[i]) || Character.isLetter(palabra.toCharArray()[i])) && 
                     !(Character.isDigit(palabra.toCharArray()[i+1]) || Character.isLetter(palabra.toCharArray()[i+1]))){
-                System.out.println(palabra.toCharArray()[i]);
-                System.out.println(palabra.toCharArray()[i+1]);
                 contadorPalabra += 1;
             }
         }
@@ -25,7 +23,21 @@ public class ContadorDePalabras {
         } else {
             return 0;
         }
-           
-        
     }
+    
+    public static int[] contadorVocalesConsonantes(String word){ 
+        Vocals vocals;
+        int vocalCount = 0;
+        int consonantCount = 0;
+        for(char letter: word.toUpperCase().toCharArray()){
+            for(Vocals vocal : Vocals.values()){
+                if(vocal.name().charAt(0) == letter){
+                    vocalCount += 1;
+                }   
+            } 
+        }
+        consonantCount = word.length() - vocalCount;
+        int[] totalCounter = {vocalCount, consonantCount};
+        return totalCounter;
+    } 
 }
